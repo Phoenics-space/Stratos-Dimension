@@ -19,14 +19,21 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         BlockStateModelGenerator.BlockTexturePool rubyPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.RUBY_BLOCK);
         BlockStateModelGenerator.BlockTexturePool airMahoeTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.AIR_MAHOE_PLANKS);
+        BlockStateModelGenerator.BlockTexturePool shingleTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SHINGLE_PLANKS);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.FRAME);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RUBY_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.STRATOS_STONE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.COBBLED_STRATOS_STONE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SKY_SEDIMENT);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SKY_SEDIMENT_BRICKS);
 
         blockStateModelGenerator.registerLog(ModBlocks.AIR_MAHOE_LOG).log(ModBlocks.AIR_MAHOE_LOG).wood(ModBlocks.AIR_MAHOE_WOOD);
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_AIR_MAHOE_LOG).log(ModBlocks.STRIPPED_AIR_MAHOE_LOG).wood(ModBlocks.STRIPPED_AIR_MAHOE_WOOD);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.AIR_MAHOE_LICHEN);
+        //shingle
+        blockStateModelGenerator.registerLog(ModBlocks.SHINGLE_LOG).log(ModBlocks.SHINGLE_LOG).wood(ModBlocks.SHINGLE_WOOD);
+        blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_SHINGLE_LOG).log(ModBlocks.STRIPPED_SHINGLE_LOG).wood(ModBlocks.STRIPPED_SHINGLE_WOOD);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SHINGLE_MYOZYT);
 
         registerNonStandardCube(blockStateModelGenerator, ModBlocks.LICHEN_GROWTH, "stratos:block/stratos_stone", ModTextureMap::grassBlock);
 
@@ -53,10 +60,21 @@ public class ModModelProvider extends FabricModelProvider {
         airMahoeTexturePool.fence(ModBlocks.AIR_MAHOE_FENCE);
         airMahoeTexturePool.fenceGate(ModBlocks.AIR_MAHOE_FENCE_GATE);
         airMahoeTexturePool.wall(ModBlocks.STRATOS_STONE_WALL);
+        //shingle
+        shingleTexturePool.stairs(ModBlocks.SHINGLE_STAIRS);
+        shingleTexturePool.slab(ModBlocks.SHINGLE_SLAB);
+        shingleTexturePool.button(ModBlocks.SHINGLE_BUTTON);
+        shingleTexturePool.pressurePlate(ModBlocks.SHINGLE_PRESSURE_PLATE);
+        shingleTexturePool.fence(ModBlocks.SHINGLE_FENCE);
+        shingleTexturePool.fenceGate(ModBlocks.SHINGLE_FENCE_GATE);
+
 
 
         blockStateModelGenerator.registerDoor(ModBlocks.AIR_MAHOE_DOOR);
         blockStateModelGenerator.registerTrapdoor(ModBlocks.AIR_MAHOE_TRAPDOOR);
+        //shingle
+        blockStateModelGenerator.registerDoor(ModBlocks.SHINGLE_DOOR);
+        blockStateModelGenerator.registerTrapdoor(ModBlocks.SHINGLE_TRAPDOOR);
 
     }
 

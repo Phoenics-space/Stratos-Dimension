@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "stratos:block/shingle_slab"
+    },
+    "type=double": {
+      "model": "stratos:block/shingle_planks"
+    },
+    "type=top": {
+      "model": "stratos:block/shingle_slab_top"
+    }
+  }
+}

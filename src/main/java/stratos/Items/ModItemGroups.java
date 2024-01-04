@@ -23,6 +23,10 @@ public class ModItemGroups {
 
                         entries.add(ModBlocks.STRATOS_STONE);
 
+                        entries.add(ModBlocks.SKY_SEDIMENT);
+
+                        entries.add(ModBlocks.SKY_SEDIMENT_BRICKS);
+
                         entries.add(ModBlocks.COBBLED_STRATOS_STONE);
 
                         entries.add(ModBlocks.STRATOS_STONE_WALL);
@@ -58,8 +62,34 @@ public class ModItemGroups {
                         entries.add(ModBlocks.AIR_MAHOE_TRAPDOOR);
 
                         entries.add(ModBlocks.AIR_MAHOE_PRESSURE_PLATE);
+                        //shingle
+                        entries.add(ModBlocks.SHINGLE_LOG);
 
-                        entries.add(ModBlocks.AIR_MAHOE_BUTTON);
+                        entries.add(ModBlocks.SHINGLE_WOOD);
+
+                        entries.add(ModBlocks.STRIPPED_SHINGLE_LOG);
+
+                        entries.add(ModBlocks.STRIPPED_SHINGLE_WOOD);
+
+                        entries.add(ModBlocks.SHINGLE_PLANKS);
+
+                        entries.add(ModBlocks.SHINGLE_STAIRS);
+
+                        entries.add(ModBlocks.SHINGLE_SLAB);
+
+                        entries.add(ModBlocks.SHINGLE_FENCE);
+
+                        entries.add(ModBlocks.SHINGLE_FENCE_GATE);
+
+                        entries.add(ModBlocks.SHINGLE_DOOR);
+
+                        entries.add(ModBlocks.SHINGLE_TRAPDOOR);
+
+                        entries.add(ModBlocks.SHINGLE_PRESSURE_PLATE);
+
+                        entries.add(ModBlocks.SHINGLE_BUTTON);
+
+                        entries.add(ModBlocks.SHINGLE_MYOZYT);
 
 
 

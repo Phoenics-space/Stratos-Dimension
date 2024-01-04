@@ -31,7 +31,7 @@ public class AirMahoeFoliagePlacer extends FoliagePlacer {
     protected void generate(TestableWorld world, BlockPlacer placer, Random random, TreeFeatureConfig config, int trunkHeight,
                             TreeNode treeNode, int foliageHeight, int radius, int offset) {
         generateSquareWithHangingLeaves(world, placer, random, config, treeNode.getCenter().up(-1), 2, 0, !treeNode.isGiantTrunk(), 0.5f, 0.5f);
-        generateSquareWithHangingLeaves(world, placer, random, config, treeNode.getCenter().up(0), 2, 0, !treeNode.isGiantTrunk(), 0.0f, 0.0f);
+        generateSquareWithHangingLeaves(world, placer, random, config, treeNode.getCenter().up(0), 2, 0, !treeNode.isGiantTrunk(), 1.0f, 0.0f);
         generateSquareWithHangingLeaves(world, placer, random, config, treeNode.getCenter().up(1), 1, 0, !treeNode.isGiantTrunk(), 0.0f, 0.0f);
 
 

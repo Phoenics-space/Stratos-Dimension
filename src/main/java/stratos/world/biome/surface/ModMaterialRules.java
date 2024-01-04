@@ -51,9 +51,7 @@ public class ModMaterialRules {
                 MaterialRules.condition(MaterialRules.STONE_DEPTH_CEILING_WITH_SURFACE_DEPTH, STRATOS_STONE),/*Defines the material above the Ceiling*/
                 MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR_WITH_SURFACE_DEPTH_RANGE_30, STRATOS_STONE),
                 MaterialRules.condition(MaterialRules.aboveYWithStoneDepth(YOffset.BOTTOM, 2), STRATOS_STONE),
-
-
-                // Default to a grass and dirt surface
+                        // Default to a grass and dirt surface
                 MaterialRules.condition(MaterialRules.STONE_DEPTH_FLOOR, grassSurface)
         );
     }

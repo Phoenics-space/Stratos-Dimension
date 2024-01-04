@@ -63,7 +63,7 @@ public class ModBiomes {
                 .effects((new BiomeEffects.Builder())
                         .waterColor(0x111ac7)
                         .waterFogColor(0x141ed6)
-                        .skyColor(0x111ac7)
+                        .skyColor(0xC0C0C0)
                         .grassColor(0x8b8589)
                         .foliageColor(0x8b8589)
                         .fogColor(0x22a1e6)

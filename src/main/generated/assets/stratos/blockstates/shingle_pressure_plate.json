@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "stratos:block/shingle_pressure_plate"
+    },
+    "powered=true": {
+      "model": "stratos:block/shingle_pressure_plate_down"
+    }
+  }
+}

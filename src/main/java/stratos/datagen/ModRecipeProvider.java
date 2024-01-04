@@ -41,6 +41,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         createFenceGateRecipe(ModBlocks.AIR_MAHOE_PLANKS,Ingredient.ofItems(ModBlocks.AIR_MAHOE_PLANKS));
 
         createDoorRecipe(ModBlocks.AIR_MAHOE_PLANKS, Ingredient.ofItems(ModBlocks.AIR_MAHOE_PLANKS));
+        //shingle
+        createTrapdoorRecipe(ModBlocks.SHINGLE_PLANKS, Ingredient.ofItems(ModBlocks.SHINGLE_PLANKS));
+
+        createFenceRecipe(ModBlocks.SHINGLE_PLANKS,Ingredient.ofItems(ModBlocks.SHINGLE_PLANKS));
+
+        createFenceGateRecipe(ModBlocks.SHINGLE_PLANKS,Ingredient.ofItems(ModBlocks.SHINGLE_PLANKS));
+
+        createDoorRecipe(ModBlocks.SHINGLE_PLANKS, Ingredient.ofItems(ModBlocks.SHINGLE_PLANKS));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, Items.STONE_PICKAXE)
                 .pattern("###")
@@ -77,6 +85,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('|', Items.STICK)
                 .criterion(hasItem(ModBlocks.COBBLED_STRATOS_STONE), conditionsFromItem(ModBlocks.COBBLED_STRATOS_STONE))
                 .offerTo(exporter, new Identifier(getItemPath(Items.STONE_SHOVEL)));
+
     }
 }
 
