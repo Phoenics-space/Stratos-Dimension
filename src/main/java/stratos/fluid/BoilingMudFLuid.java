@@ -10,11 +10,12 @@ import net.minecraft.item.Item;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 
-public class BoilingMudFLuid extends FlowableFluid{
+public abstract class BoilingMudFLuid extends FlowableFluid {
     @Override
     protected boolean isInfinite() {
         return false;

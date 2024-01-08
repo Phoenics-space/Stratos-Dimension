@@ -4,34 +4,95 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FluidBlock;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.fluid.FlowableFluid;
+import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
+import net.minecraft.world.BlockView;
+import net.minecraft.world.WorldAccess;
+import net.minecraft.world.WorldView;
 import stratos.Items.ModItemGroups;
 import stratos.mod.ExampleMod;
 
-public class ModFluids {
-    public static FlowableFluid STILL_BOILING_MUD;
-    public static FlowableFluid FLOWING_BOUILING_MUD;
-    public static Block BOILING_MUD_BLOCK;
-    public static Item BOILING_MUD_BUCKET;
+public abstract class ModFluids extends FlowableFluid {
+        /**
+         * @return whether the given fluid an instance of this fluid
+         */
+        @Override
+        public boolean matchesType(Fluid fluid) {
+            return fluid == getStill() || fluid == getFlowing();
+        }
 
-    public static void register() {
-        STILL_BOILING_MUD = Registry.register(Registries.FLUID,
-                new Identifier(ExampleMod.MOD_ID, "boiling_mud"), new BoilingMudFLuid());
-        FLOWING_BOUILING_MUD = Registry.register(Registries.FLUID,
-                new Identifier(ExampleMod.MOD_ID, "flowing_boiling_mud"), new BoilingMudFLuid());
+        /**
+         * @return whether the fluid is infinite (which means can be infinitely created like water). In vanilla, it depends on the game rule.
+         */
+        @Override
+        protected boolean isInfinite() {
+            return false;
+        }
 
-        BOILING_MUD_BLOCK = Registry.register(Registries.BLOCK, new Identifier(ExampleMod.MOD_ID, "soap_water_block"),
-                new FluidBlock(ModFluids.STILL_BOILING_MUD, FabricBlockSettings.copyOf(Blocks.WATER)){ });
-        BOILING_MUD_BUCKET = Registry.register(Registries.ITEM, new Identifier(ExampleMod.MOD_ID, "soap_water_bucket"),
-                new BucketItem(ModFluids.STILL_BOILING_MUD, new //????? (ModItemGroups.RUBY_GROUP).recipeRemainder(Items.BUCKET).maxCount(1)));
+        /**
+         * Perform actions when the fluid flows into a replaceable block. Water drops
+         * the block's loot table. Lava plays the "block.lava.extinguish" sound.
+         */
+        @Override
+        protected void beforeBreakingBlock(WorldAccess world, BlockPos pos, BlockState state) {
+            final BlockEntity blockEntity = state.hasBlockEntity() ? world.getBlockEntity(pos) : null;
+            Block.dropStacks(state, world, pos, blockEntity);
+        }
+
+        /**
+         * Lava returns true if it's FluidState is above a certain height and the
+         * Fluid is Water.
+         *
+         * @return whether the given Fluid can flow into this FluidState
+         */
+        @Override
+        protected boolean canBeReplacedWith(FluidState fluidState, BlockView blockView, BlockPos blockPos, Fluid fluid, Direction direction) {
+            return false;
+        }
+
+        /**
+         * Possibly related to the distance checks for flowing into nearby holes?
+         * Water returns 4. Lava returns 2 in the Overworld and 4 in the Nether.
+         */
+        @Override
+        protected int getFlowSpeed(WorldView worldView) {
+            return 4;
+        }
+
+        /**
+         * Water returns 1. Lava returns 2 in the Overworld and 1 in the Nether.
+         */
+        @Override
+        protected int getLevelDecreasePerBlock(WorldView worldView) {
+            return 2;
+        }
+
+        /**
+         * Water returns 5. Lava returns 30 in the Overworld and 10 in the Nether.
+         */
+        @Override
+        public int getTickRate(WorldView worldView) {
+            return 10;
+        }
+
+        /**
+         * Water and Lava both return 100.0F.
+         */
+        @Override
+        protected float getBlastResistance() {
+            return 100.0F;
+        }
     }
-}
-}
