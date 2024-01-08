@@ -39,6 +39,7 @@ public class ExampleMod
         ModRegistries.registerModRegistries();
 
         ModParticles.registerParticles();
+        ModFluids.register();
 
         //ModTrunkPlacerTypes.register();
         ModFoliagePlacerTypes.register();
