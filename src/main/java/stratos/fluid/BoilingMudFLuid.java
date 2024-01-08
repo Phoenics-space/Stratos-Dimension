@@ -12,14 +12,11 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 
-public abstract class BoilingMudFLuid extends FlowableFluid {
-    @Override
-    protected boolean isInfinite() {
-        return false;
-    }
+public class BoilingMudFLuid extends FlowableFluid {
 
     @Override
     protected void beforeBreakingBlock(WorldAccess world, BlockPos pos, BlockState state) {
@@ -58,13 +55,13 @@ public abstract class BoilingMudFLuid extends FlowableFluid {
     }
 
     @Override
-    protected boolean canBeReplacedWith(FluidState state, BlockView world, BlockPos pos, Fluid fluid, Direction direction) {
-        return false;
+    public Fluid getStill() {
+        return ModFluids.STILL_BOILING_MUD;
     }
 
     @Override
-    public Fluid getStill() {
-        return ModFluids.STILL_BOILING_MUD;
+    protected boolean isInfinite(World world) {
+        return false;
     }
 
     @Override
@@ -75,6 +72,11 @@ public abstract class BoilingMudFLuid extends FlowableFluid {
     @Override
     public Item getBucketItem() {
         return ModFluids.BOILING_MUD_BUCKET;
+    }
+
+    @Override
+    protected boolean canBeReplacedWith(FluidState state, BlockView world, BlockPos pos, Fluid fluid, Direction direction) {
+        return false;
     }
 
     @Override
@@ -99,10 +101,6 @@ public abstract class BoilingMudFLuid extends FlowableFluid {
             return state.get(LEVEL);
         }
 
-        @Override
-        public boolean isStill(FluidState state) {
-            return false;
-        }
     }
 
     public static class Still extends BoilingMudFLuid {
