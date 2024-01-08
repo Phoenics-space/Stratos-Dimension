@@ -1,3 +1,5 @@
+package stratos.mod.mixin;
+
 import com.mojang.serialization.Codec;
 import net.minecraft.world.gen.treedecorator.TreeDecorator;
 import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
