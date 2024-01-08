@@ -95,6 +95,13 @@ public class ModItemGroups {
 
 
 
+                        /* here we call ModFluids.BOILING_MUD_BUCKET because this Item is registered in the ModFluids Class */
+                        entries.add(ModFluids.BOILING_MUD_BUCKET);
+
+
+
+
+
                         entries.add(ModBlocks.AIR_MAHOE_SAPLING);
 
                         entries.add(ModBlocks.LICHEN_GROWTH);
