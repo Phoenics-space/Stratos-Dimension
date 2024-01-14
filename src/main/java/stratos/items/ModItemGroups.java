@@ -15,8 +15,10 @@ public class ModItemGroups {
     public static final ItemGroup RUBY_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(ExampleMod.MOD_ID, "ruby"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.ruby"))
-                    .icon(() -> new ItemStack(ModItems.RUBY)).entries((displayContext, entries) -> {
-                        entries.add(ModItems.RUBY);
+                    .icon(() -> new ItemStack(stratos.Items.ModItems.RUBY)).entries((displayContext, entries) -> {
+                        entries.add(stratos.Items.ModItems.RUBY);
+
+                        entries.add(stratos.Items.ModItems.ANCIENT_PORTAL_IGNITER);
 
                         entries.add(ModBlocks.RUBY_BLOCK);
 
@@ -111,9 +113,11 @@ public class ModItemGroups {
 
                         entries.add(ModBlocks.AIR_SHROOM);
 
-                        entries.add(ModItems.AIR_KELP);
+                        entries.add(ModBlocks.AIR_KELP);
 
                         entries.add(ModBlocks.SHROOM_MYOZYT);
+
+                        entries.add(stratos.Items.ModItems.AIR_KELP);
 
 
                     }).build());

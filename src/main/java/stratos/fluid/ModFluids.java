@@ -26,7 +26,7 @@ public class ModFluids {
         FLOWING_BOUILING_MUD = Registry.register(Registries.FLUID, new Identifier(ExampleMod.MOD_ID, "flowing_boiling_mud"), new BoilingMudFLuid());
 
         BOILING_MUD_BLOCK = Registry.register(Registries.BLOCK, new Identifier(ExampleMod.MOD_ID, "boiling_mud_block"),
-                new FluidBlock(ModFluids.STILL_BOILING_MUD, FabricBlockSettings.copyOf(Blocks.WATER)) {
+                new FluidBlock(ModFluids.STILL_BOILING_MUD, FabricBlockSettings.copyOf(Blocks.LAVA)) {
                 });
 
         BOILING_MUD_BUCKET = Registry.register(Registries.ITEM, new Identifier(ExampleMod.MOD_ID, "boiling_mud_bucket"),

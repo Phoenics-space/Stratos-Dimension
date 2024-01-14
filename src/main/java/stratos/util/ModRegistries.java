@@ -41,7 +41,7 @@ public class ModRegistries {
     private static void registerPortal() {
         CustomPortalBuilder.beginPortal()
                 .frameBlock(Blocks.REINFORCED_DEEPSLATE)
-                .lightWithItem(ModItems.RUBY)
+                .lightWithItem(ModItems.ANCIENT_PORTAL_IGNITER)
                 .destDimID(new Identifier(ExampleMod.MOD_ID,"stratosdim"))
                 .tintColor(0xbe, 0x01, 0x3c)
                 .registerPortal();

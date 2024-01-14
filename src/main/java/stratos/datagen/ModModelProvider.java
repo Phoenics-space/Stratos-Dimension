@@ -48,6 +48,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerItemModel(ModItems.AIR_KELP);
         //blockStateModelGenerator.excludeFromSimpleItemModelGeneration(ModBlocks.AIR_KELP_PLANT);
 
+        blockStateModelGenerator.registerItemModel(ModItems.ANCIENT_PORTAL_IGNITER);
+
         blockStateModelGenerator.registerWallPlant(ModBlocks.SHROOM_MYOZYT);
 
 

@@ -58,13 +58,14 @@ public class ExampleMod
         BOILING_MUD_BUCKET = Registry.register(Registries.ITEM, new Identifier("stratos", "acid_bucket"),
                 new BucketItem(STILL_BOILING_MUD, new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)));
 
-        BOILING_MUD = Registry.register(Registries.BLOCK, new Identifier(MOD_ID, "acid"), new FluidBlock(STILL_BOILING_MUD, FabricBlockSettings.copy(Blocks.LAVA)){});
+        BOILING_MUD = Registry.register(Registries.BLOCK, new Identifier(MOD_ID, "acid"), new FluidBlock(STILL_BOILING_MUD, FabricBlockSettings.copy(Blocks.LAVA)) {});
 
     }
     public static FluidBlock BOILING_MUD;
     public static FlowableFluid STILL_BOILING_MUD;
     public static FlowableFluid FLOWING_BOILING_MUD;
     public static Item BOILING_MUD_BUCKET;
+
 
     public static TreeDecoratorType AIR_MAHOE_TREE_DECORATOR;
 
