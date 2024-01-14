@@ -1,6 +1,7 @@
 package stratos.world.tree;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
@@ -8,6 +9,7 @@ import net.minecraft.world.gen.treedecorator.TreeDecorator;
 import net.minecraft.world.gen.treedecorator.TreeDecoratorType;
 import stratos.block.ModBlocks;
 import stratos.mod.ExampleMod;
+
 
 public class AirMahoeTreeDecorator extends TreeDecorator {
     public static final AirMahoeTreeDecorator INSTANCE = new AirMahoeTreeDecorator();
@@ -24,7 +26,7 @@ public class AirMahoeTreeDecorator extends TreeDecorator {
     @Override
     public void generate(TreeDecorator.Generator generator) {
         // Iterate through block positions
-        generator.getLogPositions().forEach(pos -> {
+        generator.getLogPositions().forEach(logPosition -> {
             Random random = generator.getRandom();
             // Pick a value from 0 (inclusive) to 4 (exclusive) and if it's 0, continue
             // This is the chance for spawning the gold block
@@ -42,14 +44,12 @@ public class AirMahoeTreeDecorator extends TreeDecorator {
                 // Offset the log position by the resulting side
                 BlockPos targetPosition = logPosition.offset(side, 1);
 
-                // Place the Lichen block using the replacer BiConsumer
-                // This is the standard way of placing blocks in TrunkPlacers, FoliagePlacers and TreeDecorators
-                replacer.accept(targetPosition, ModBlocks.AIR_MAHOE_LICHEN .getDefaultState());
+                // Obtain the ServerWorld from the World object
+                ServerWorld serverWorld = (ServerWorld) generator.getWorld();
 
-
+                // Place the Lichen block directly in the world
+                serverWorld.setBlockState(targetPosition, ModBlocks.AIR_MAHOE_LICHEN.getDefaultState());
             }
         });
-
     }
 }
-
