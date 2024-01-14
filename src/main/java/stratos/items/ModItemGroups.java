@@ -8,6 +8,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import stratos.block.ModBlocks;
+import stratos.fluid.ModFluids;
 import stratos.mod.ExampleMod;
 
 public class ModItemGroups {

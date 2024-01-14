@@ -42,7 +42,7 @@ public class AirMahoeTreeDecorator extends TreeDecorator {
                 // Offset the log position by the resulting side
                 BlockPos targetPosition = logPosition.offset(side, 1);
 
-                // Place the gold block using the replacer BiConsumer
+                // Place the Lichen block using the replacer BiConsumer
                 // This is the standard way of placing blocks in TrunkPlacers, FoliagePlacers and TreeDecorators
                 replacer.accept(targetPosition, ModBlocks.AIR_MAHOE_LICHEN .getDefaultState());
 

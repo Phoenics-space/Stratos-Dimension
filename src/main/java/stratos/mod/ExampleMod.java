@@ -18,6 +18,7 @@ import stratos.Items.ModItemGroups;
 import stratos.Items.ModItems;
 import stratos.block.ModBlocks;
 import stratos.fluid.BoilingMudFLuid;
+import stratos.fluid.ModFluids;
 import stratos.particle.ModParticles;
 import stratos.util.ModRegistries;
 import stratos.world.gen.ModWorldGeneration;
@@ -64,6 +65,8 @@ public class ExampleMod
     public static FlowableFluid STILL_BOILING_MUD;
     public static FlowableFluid FLOWING_BOILING_MUD;
     public static Item BOILING_MUD_BUCKET;
+
+    public static TreeDecoratorType AIR_MAHOE_TREE_DECORATOR;
 
     }
 
