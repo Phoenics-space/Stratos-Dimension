@@ -11,12 +11,13 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import stratos.block.ModBlocks;
+import stratos.items.AncientPortalIgniter.AncientPortalIgniter;
 import stratos.mod.ExampleMod;
 
 public class ModItems {
     public static final Item RUBY = registerItem("ruby", new Item(new FabricItemSettings()));
 
-    public static final Item ANCIENT_PORTAL_IGNITER = registerItem("ancient_portal_igniter", new Item(new FabricItemSettings()));
+    public static final Item ANCIENT_PORTAL_IGNITER = registerItem("ancient_portal_igniter", new AncientPortalIgniter(new FabricItemSettings()));
     public static final Item AIR_KELP = registerItem("air_kelp", new AliasedBlockItem(ModBlocks.AIR_KELP, new FabricItemSettings()));
 
 

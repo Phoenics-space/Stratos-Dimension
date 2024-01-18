@@ -1,11 +1,14 @@
 package stratos.util;
 
+import net.fabricmc.fabric.api.event.server.ServerTickCallback;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Items;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
 import stratos.Items.ModItems;
 import stratos.block.ModBlocks;
 import stratos.mod.ExampleMod;
@@ -37,6 +40,7 @@ public class ModRegistries {
         FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.AIR_MAHOE_SLAB, 5, 20);
         FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.AIR_MAHOE_LICHEN, 30, 60);
     }
+
 
     private static void registerPortal() {
         CustomPortalBuilder.beginPortal()
