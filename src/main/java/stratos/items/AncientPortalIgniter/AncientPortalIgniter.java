@@ -29,24 +29,35 @@ public class AncientPortalIgniter extends Item {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         ItemStack stack = player.getStackInHand(hand);
-        BlockHitResult hitResult = Item.raycast(world, player, RaycastContext.FluidHandling.ANY);
 
-        if (hitResult.getType() == HitResult.Type.BLOCK) {
-            BlockPos pos = hitResult.getBlockPos();
-            BlockState blockState = world.getBlockState(pos);
+        if (stack.getItem() == stratos.Items.ModItems.ANCIENT_PORTAL_IGNITER && hand == Hand.MAIN_HAND) {
+            BlockHitResult hitResult = Item.raycast(world, player, RaycastContext.FluidHandling.ANY);
 
-            if (blockState.isOf(Blocks.REINFORCED_DEEPSLATE) && world instanceof ServerWorld) {
-                LightningEntity lightning = new LightningEntity(EntityType.LIGHTNING_BOLT, world);
-                lightning.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
-                if (player instanceof ServerPlayerEntity serverPlayer) {
-                    lightning.setChanneler(serverPlayer);
+            if (hitResult.getType() == HitResult.Type.BLOCK) {
+                BlockPos pos = hitResult.getBlockPos();
+                BlockState blockState = world.getBlockState(pos);
+
+                if (blockState.isOf(Blocks.REINFORCED_DEEPSLATE) && world instanceof ServerWorld) {
+                    // Summon lightning at the block position
+                    summonLightning(world, player, pos);
+
+                    return TypedActionResult.success(stack);
                 }
-
-                world.spawnEntity(lightning);
-                return TypedActionResult.success(stack);
             }
         }
 
         return TypedActionResult.pass(stack);
+    }
+
+    private void summonLightning(World world, PlayerEntity player, BlockPos pos) {
+        LightningEntity lightningEntity = (LightningEntity) EntityType.LIGHTNING_BOLT.create(world);
+        lightningEntity.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(pos));
+        world.spawnEntity(lightningEntity);
+
+        if (player instanceof ServerPlayerEntity serverPlayer) {
+            lightningEntity.setChanneler(serverPlayer);
+        }
+
+        world.spawnEntity(lightningEntity);
     }
 }

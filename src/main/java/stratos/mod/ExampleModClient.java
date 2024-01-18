@@ -34,14 +34,6 @@ public class ExampleModClient implements ClientModInitializer {
 
         ParticleFactoryRegistry.getInstance().register(ModParticles.AIR_SHROOM_PARTICLE, AirShroomParticle.Factory::new);
 
-        FluidRenderHandlerRegistry.INSTANCE.register(ExampleMod.STILL_BOILING_MUD, ExampleMod.FLOWING_BOILING_MUD, new SimpleFluidRenderHandler(
-                new Identifier("minecraft:block/water_still"),
-                new Identifier("minecraft:block/water_flow"),
-                0x4CC248
-        ));
-
-        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), ExampleMod.STILL_BOILING_MUD, ExampleMod.FLOWING_BOILING_MUD);
-
     }
 }
 

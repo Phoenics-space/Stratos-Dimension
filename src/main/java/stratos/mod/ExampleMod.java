@@ -17,12 +17,9 @@ import org.slf4j.LoggerFactory;
 import stratos.Items.ModItemGroups;
 import stratos.Items.ModItems;
 import stratos.block.ModBlocks;
-import stratos.fluid.BoilingMudFLuid;
-import stratos.fluid.ModFluids;
 import stratos.particle.ModParticles;
 import stratos.util.ModRegistries;
 import stratos.world.gen.ModWorldGeneration;
-import stratos.world.tree.AirMahoeTreeDecorator;
 import stratos.world.tree.ModFoliagePlacerTypes;
 
 public class ExampleMod
@@ -40,7 +37,6 @@ public class ExampleMod
         ModRegistries.registerModRegistries();
 
         ModParticles.registerParticles();
-        ModFluids.register();
 
         //ModTrunkPlacerTypes.register();
         ModFoliagePlacerTypes.register();
@@ -53,21 +49,9 @@ public class ExampleMod
         * 
         * */
 
-        STILL_BOILING_MUD = Registry.register(Registries.FLUID, new Identifier("stratos", "acid"), new BoilingMudFLuid.Still());
-        FLOWING_BOILING_MUD = Registry.register(Registries.FLUID, new Identifier("stratos", "flowing_acid"), new BoilingMudFLuid.Flowing());
-        BOILING_MUD_BUCKET = Registry.register(Registries.ITEM, new Identifier("stratos", "acid_bucket"),
-                new BucketItem(STILL_BOILING_MUD, new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)));
-
-        BOILING_MUD = Registry.register(Registries.BLOCK, new Identifier(MOD_ID, "acid"), new FluidBlock(STILL_BOILING_MUD, FabricBlockSettings.copy(Blocks.LAVA)) {});
 
     }
-    public static FluidBlock BOILING_MUD;
-    public static FlowableFluid STILL_BOILING_MUD;
-    public static FlowableFluid FLOWING_BOILING_MUD;
-    public static Item BOILING_MUD_BUCKET;
+}
 
 
-    public static TreeDecoratorType AIR_MAHOE_TREE_DECORATOR;
-
-    }
 

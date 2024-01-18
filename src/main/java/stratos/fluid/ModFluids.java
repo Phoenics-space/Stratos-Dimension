@@ -21,9 +21,9 @@ public class ModFluids {
     public static Item BOILING_MUD_BUCKET;
 
     public static void register() {
-        STILL_BOILING_MUD = Registry.register(Registries.FLUID, new Identifier(ExampleMod.MOD_ID, "boiling_mud"), new BoilingMudFLuid());
+        STILL_BOILING_MUD = Registry.register(Registries.FLUID, new Identifier(ExampleMod.MOD_ID, "boiling_mud"), new BoilingMudFluid.Still());
 
-        FLOWING_BOUILING_MUD = Registry.register(Registries.FLUID, new Identifier(ExampleMod.MOD_ID, "flowing_boiling_mud"), new BoilingMudFLuid());
+        FLOWING_BOUILING_MUD = Registry.register(Registries.FLUID, new Identifier(ExampleMod.MOD_ID, "flowing_boiling_mud"), new BoilingMudFluid.Flowing());
 
         BOILING_MUD_BLOCK = Registry.register(Registries.BLOCK, new Identifier(ExampleMod.MOD_ID, "boiling_mud_block"),
                 new FluidBlock(ModFluids.STILL_BOILING_MUD, FabricBlockSettings.copyOf(Blocks.LAVA)) {

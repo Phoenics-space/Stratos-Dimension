@@ -8,7 +8,6 @@ import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import stratos.block.ModBlocks;
-import stratos.fluid.ModFluids;
 import stratos.mod.ExampleMod;
 
 public class ModItemGroups {
@@ -99,7 +98,7 @@ public class ModItemGroups {
 
 
                         /* here we call ModFluids.BOILING_MUD_BUCKET because this Item is registered in the ModFluids Class */
-                        entries.add(ModFluids.BOILING_MUD_BUCKET);
+                        //entries.add(ModFluids.BOILING_MUD_BUCKET);
 
 
 
@@ -117,7 +116,6 @@ public class ModItemGroups {
 
                         entries.add(ModBlocks.SHROOM_MYOZYT);
 
-                        entries.add(stratos.Items.ModItems.AIR_KELP);
 
 
                     }).build());

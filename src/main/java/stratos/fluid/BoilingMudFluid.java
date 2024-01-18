@@ -8,6 +8,7 @@ import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.item.Item;
 import net.minecraft.state.StateManager;
+import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -16,7 +17,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 
-public class BoilingMudFLuid extends FlowableFluid {
+public class BoilingMudFluid extends FlowableFluid {
+    public static final IntProperty LEVEL = Properties.LEVEL_1_8;
 
     @Override
     protected void beforeBreakingBlock(WorldAccess world, BlockPos pos, BlockState state) {
@@ -41,7 +43,7 @@ public class BoilingMudFLuid extends FlowableFluid {
 
     @Override
     public int getLevel(FluidState state) {
-        return 0;
+        return state.get(LEVEL);
     }
 
     @Override
@@ -81,7 +83,7 @@ public class BoilingMudFLuid extends FlowableFluid {
 
     @Override
     protected BlockState toBlockState(FluidState state) {
-        return ModFluids.BOILING_MUD_BLOCK.getDefaultState().with(Properties.LEVEL_15, getBlockStateLevel(state));
+        return ModFluids.BOILING_MUD_BLOCK.getDefaultState().with(LEVEL, getBlockStateLevel(state));
     }
 
     @Override
@@ -89,7 +91,7 @@ public class BoilingMudFLuid extends FlowableFluid {
         return false;
     }
 
-    public static class Flowing extends BoilingMudFLuid {
+    public static class Flowing extends BoilingMudFluid {
         @Override
         protected void appendProperties(StateManager.Builder<Fluid, FluidState> builder) {
             super.appendProperties(builder);
@@ -100,10 +102,9 @@ public class BoilingMudFLuid extends FlowableFluid {
         public int getLevel(FluidState state) {
             return state.get(LEVEL);
         }
-
     }
 
-    public static class Still extends BoilingMudFLuid {
+    public static class Still extends BoilingMudFluid {
         @Override
         public int getLevel(FluidState state) {
             return 8;
@@ -115,3 +116,5 @@ public class BoilingMudFLuid extends FlowableFluid {
         }
     }
 }
+
+
