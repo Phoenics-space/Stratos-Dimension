@@ -86,6 +86,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModBlocks.COBBLED_STRATOS_STONE), conditionsFromItem(ModBlocks.COBBLED_STRATOS_STONE))
                 .offerTo(exporter, new Identifier(getItemPath(Items.STONE_SHOVEL)));
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.ANCIENT_PORTAL_IGNITER)
+                .pattern("+#+")
+                .pattern("|||")
+                .pattern(" | ")
+                .input('#', ModItems.RUBY)
+                .input('+', Items.ECHO_SHARD)
+                .input('|', Items.STICK)
+                .offerTo(exporter, new Identifier(getItemPath(ModItems.ANCIENT_PORTAL_IGNITER)));
+
     }
 }
 
