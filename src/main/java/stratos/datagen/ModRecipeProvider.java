@@ -93,6 +93,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('#', ModItems.RUBY)
                 .input('+', Items.ECHO_SHARD)
                 .input('|', Items.STICK)
+                .criterion(hasItem(ModItems.RUBY), conditionsFromItem(ModItems.RUBY))
                 .offerTo(exporter, new Identifier(getItemPath(ModItems.ANCIENT_PORTAL_IGNITER)));
 
     }
