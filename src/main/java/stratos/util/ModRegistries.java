@@ -47,7 +47,7 @@ public class ModRegistries {
                 .frameBlock(Blocks.REINFORCED_DEEPSLATE)
                 .lightWithItem(ModItems.ANCIENT_PORTAL_IGNITER)
                 .destDimID(new Identifier(ExampleMod.MOD_ID,"stratosdim"))
-                .tintColor(0xbe, 0x01, 0x3c)
+                .tintColor(0x7d, 0x93, 0xac)
                 .registerPortal();
     }
 }
