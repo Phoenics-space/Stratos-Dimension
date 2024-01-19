@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "stratos:ruby"
+    },
+    "+": {
+      "item": "minecraft:echo_shard"
+    },
+    "|": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "+#+",
+    "|||",
+    " | "
+  ],
+  "result": {
+    "item": "stratos:ancient_portal_igniter"
+  },
+  "show_notification": true
+}
