@@ -38,7 +38,7 @@ public class AirMahoeTrunkPlacer extends TrunkPlacer {
         int height_ = height + random.nextBetween(firstRandomHeight, firstRandomHeight + 1) + random.nextBetween(secondRandomHeight - 1, secondRandomHeight + 1);
 
         // Cap the maximum height
-        height_ = Math.min(height_, 4); // Adjust the maximum height as needed
+        height_ = Math.min(height_, 6); // Adjust the maximum height as needed
 
         for (int i = 0; i < height_; i++) {
             BlockPos currentPos = startPos.up(i);
@@ -63,11 +63,11 @@ public class AirMahoeTrunkPlacer extends TrunkPlacer {
                                                                Random random, BlockPos startPos, TreeFeatureConfig config) {
         List<FoliagePlacer.TreeNode> foliageList = new ArrayList<>();
 
-        int leafSize = 2; // Adjust leaf size as needed
-        int leafCount = 0; // Adjust the number of hanging leaves
+        int leafSize = 4; // Adjust leaf size as needed
+        int leafCount = 6; // Adjust the number of hanging leaves
 
         for (int i = 0; i < leafCount; i++) {
-            int yOffset = i - leafCount / 2; // Distribute leaves around the trunk
+            int yOffset = i - leafCount / 5; // Distribute leaves around the trunk
 
             for (int x = -leafSize; x <= leafSize; x++) {
                 for (int z = -leafSize; z <= leafSize; z++) {
@@ -76,7 +76,7 @@ public class AirMahoeTrunkPlacer extends TrunkPlacer {
                     // Generate leaves at this position
                     getAndSetState(world, replacer, random, leafPos, config);
 
-                    foliageList.add(new FoliagePlacer.TreeNode(leafPos, 0, false));
+                    foliageList.add(new FoliagePlacer.TreeNode(leafPos, 0, true));
                 }
             }
         }
