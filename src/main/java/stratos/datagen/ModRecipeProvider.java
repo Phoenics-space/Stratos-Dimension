@@ -34,6 +34,54 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.RUBY, RecipeCategory.DECORATIONS,
                 ModBlocks.RUBY_BLOCK);
 
+
+
+//air mahoe
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.AIR_MAHOE_PLANKS, 4)
+                .input(ModBlocks.AIR_MAHOE_LOG)
+                .criterion(hasItem(ModBlocks.AIR_MAHOE_LOG), conditionsFromItem(ModBlocks.AIR_MAHOE_LOG))
+                .offerTo(exporter, new Identifier(ExampleMod.MOD_ID, getItemPath(ModBlocks.AIR_MAHOE_PLANKS) + "_from_air_mahoe_log"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.AIR_MAHOE_PLANKS, 4)
+                .input(ModBlocks.AIR_MAHOE_WOOD)
+                .criterion(hasItem(ModBlocks.AIR_MAHOE_WOOD), conditionsFromItem(ModBlocks.AIR_MAHOE_WOOD))
+                .offerTo(exporter, new Identifier(ExampleMod.MOD_ID, getItemPath(ModBlocks.AIR_MAHOE_PLANKS) + "_from_air_mahoe_wood"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.AIR_MAHOE_PLANKS, 4)
+                .input(ModBlocks.STRIPPED_AIR_MAHOE_LOG)
+                .criterion(hasItem(ModBlocks.STRIPPED_AIR_MAHOE_LOG), conditionsFromItem(ModBlocks.STRIPPED_AIR_MAHOE_LOG))
+                .offerTo(exporter, new Identifier(ExampleMod.MOD_ID, getItemPath(ModBlocks.AIR_MAHOE_PLANKS) + "_from_stripped_air_mahoe_log"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.AIR_MAHOE_PLANKS, 4)
+                .input(ModBlocks.STRIPPED_AIR_MAHOE_WOOD)
+                .criterion(hasItem(ModBlocks.STRIPPED_AIR_MAHOE_WOOD), conditionsFromItem(ModBlocks.STRIPPED_AIR_MAHOE_WOOD))
+                .offerTo(exporter, new Identifier(ExampleMod.MOD_ID, getItemPath(ModBlocks.AIR_MAHOE_PLANKS) + "_from_stripped_air_mahoe_wood"));
+
+
+
+
+//shingle wood
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SHINGLE_PLANKS, 4)
+                .input(ModBlocks.SHINGLE_LOG)
+                .criterion(hasItem(ModBlocks.SHINGLE_LOG), conditionsFromItem(ModBlocks.SHINGLE_LOG))
+                .offerTo(exporter, new Identifier(ExampleMod.MOD_ID, getItemPath(ModBlocks.SHINGLE_PLANKS) + "_from_shingle_log"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SHINGLE_PLANKS, 4)
+                .input(ModBlocks.SHINGLE_WOOD)
+                .criterion(hasItem(ModBlocks.SHINGLE_WOOD), conditionsFromItem(ModBlocks.SHINGLE_WOOD))
+                .offerTo(exporter, new Identifier(ExampleMod.MOD_ID, getItemPath(ModBlocks.SHINGLE_PLANKS) + "_from_shingle_wood"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SHINGLE_PLANKS, 4)
+                .input(ModBlocks.STRIPPED_SHINGLE_LOG)
+                .criterion(hasItem(ModBlocks.STRIPPED_SHINGLE_LOG), conditionsFromItem(ModBlocks.STRIPPED_SHINGLE_LOG))
+                .offerTo(exporter, new Identifier(ExampleMod.MOD_ID, getItemPath(ModBlocks.SHINGLE_PLANKS) + "_from_shingle_log"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.SHINGLE_PLANKS, 4)
+                .input(ModBlocks.STRIPPED_SHINGLE_WOOD)
+                .criterion(hasItem(ModBlocks.STRIPPED_SHINGLE_WOOD), conditionsFromItem(ModBlocks.STRIPPED_SHINGLE_WOOD))
+                .offerTo(exporter, new Identifier(ExampleMod.MOD_ID, getItemPath(ModBlocks.SHINGLE_PLANKS) + "_from_stripped_shingle_wood"));
+
         createTrapdoorRecipe(ModBlocks.AIR_MAHOE_PLANKS, Ingredient.ofItems(ModBlocks.AIR_MAHOE_PLANKS));
 
         createFenceRecipe(ModBlocks.AIR_MAHOE_PLANKS,Ingredient.ofItems(ModBlocks.AIR_MAHOE_PLANKS));
