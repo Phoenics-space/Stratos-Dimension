@@ -61,7 +61,7 @@ public class ModBiomes {
                 .generationSettings(biomeBuilder.build())
                 .spawnSettings(spawnBuilder.build())
                 .effects((new BiomeEffects.Builder())
-                        .waterColor(0x111ac7)
+                        .waterColor(0x66a3ff)
                         .waterFogColor(0x141ed6)
                         .skyColor(0xC0C0C0)
                         .grassColor(0x8b8589)

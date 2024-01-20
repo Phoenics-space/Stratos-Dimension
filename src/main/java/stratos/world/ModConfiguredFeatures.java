@@ -1,8 +1,10 @@
 package stratos.world;
 
+import net.minecraft.block.Block;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.intprovider.BiasedToBottomIntProvider;
@@ -20,6 +22,7 @@ import stratos.world.tree.custom.AirMahoeFoliagePlacer;
 public class ModConfiguredFeatures {
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> AIR_MAHOE_KEY = registerKey("air_mahoe");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> SKY_SEDIMENT_KEY = registerKey("sky_sediment");
     public static final RegistryKey<ConfiguredFeature<?, ?>> AIR_SHROOM_KEY = registerKey("air_shroom");
     public static final RegistryKey<ConfiguredFeature<?, ?>> LICHEN_GRASS_KEY = registerKey("lichen_grass");
     public static final RegistryKey<ConfiguredFeature<?, ?>> AIR_KELP_KEY = registerKey("air_kelp");
@@ -34,12 +37,10 @@ public class ModConfiguredFeatures {
                 new AirMahoeFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(4), 3),
                 new TwoLayersFeatureSize(1, 2, 2)).build());
 
-
-
         register(context, AIR_SHROOM_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(10/*tries*/, 2/*xzSpread*/,  2/*ySpread*/, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                 new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.AIR_SHROOM)))));
 
-        register(context, LICHEN_GRASS_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(10, 4,  3, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+        register(context, LICHEN_GRASS_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(10/*tries*/, 2/*xzSpread*/,  2/*ySpread*/, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
                 new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.LICHEN_GRASS)))));
 
 
