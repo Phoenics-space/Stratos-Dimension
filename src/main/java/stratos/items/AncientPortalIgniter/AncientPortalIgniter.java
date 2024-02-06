@@ -59,5 +59,14 @@ public class AncientPortalIgniter extends Item {
         }
 
         world.spawnEntity(lightningEntity);
+
+
+        }
+    @Override
+    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+        ItemStack itemStack = user.getStackInHand(hand);
+        user.getItemCooldownManager().set(this,20);
+
+        return TypedActionResult.success(itemStack, world.isClient());
     }
-}
+    }
