@@ -40,7 +40,7 @@ public class AncientPortalIgniter extends Item {
                 if (blockState.isOf(Blocks.REINFORCED_DEEPSLATE) && world instanceof ServerWorld) {
                     // Summon lightning at the block position
                     summonLightning(world, player, pos);
-
+                    player.getItemCooldownManager().set(this, 200);
                     return TypedActionResult.success(stack);
                 }
             }
@@ -62,11 +62,8 @@ public class AncientPortalIgniter extends Item {
 
 
         }
-    @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        ItemStack itemStack = user.getStackInHand(hand);
-        user.getItemCooldownManager().set(this,20);
 
-        return TypedActionResult.success(itemStack, world.isClient());
+
+
     }
-    }
+

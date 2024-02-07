@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "#": {
-      "item": "stratos:stratos_stone"
+      "item": "stratos:cobbled_stratos_stone"
     },
     "|": {
       "item": "minecraft:stick"

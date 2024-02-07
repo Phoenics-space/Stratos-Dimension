@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_stripped_air_mahoe_wood": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "stratos:stripped_air_mahoe_wood"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "stratos:air_mahoe_planks_from_stripped_air_mahoe_wood"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_stripped_air_mahoe_wood"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "stratos:air_mahoe_planks_from_stripped_air_mahoe_wood"
+    ]
+  },
+  "sends_telemetry_event": false
+}

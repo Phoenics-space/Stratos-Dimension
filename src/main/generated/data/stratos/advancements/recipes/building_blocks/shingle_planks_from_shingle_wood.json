@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_shingle_wood": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "stratos:shingle_wood"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "stratos:shingle_planks_from_shingle_wood"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_shingle_wood"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "stratos:shingle_planks_from_shingle_wood"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,6 +1,6 @@
-// 1.20.2	2024-01-20T11:46:09.3219321	Stratos/Block Loot Tables
-79a8bec3a500aa973856fdb10693b895dd545bb5 data\stratos\loot_tables\blocks\air_mahoe_button.json
+// 1.20.2	2024-02-07T20:07:52.9150471	Stratos/Block Loot Tables
 d7ec5b2d7e6677ed39e835db3d7ff3c1efe00ae5 data\stratos\loot_tables\blocks\air_mahoe_planks.json
+79a8bec3a500aa973856fdb10693b895dd545bb5 data\stratos\loot_tables\blocks\air_mahoe_button.json
 4d4272b5c787d960e9252bb1eaad3bc9dcf010ea data\stratos\loot_tables\blocks\stratos_stone.json
 4b0046e8f4583130e621b42027fea8a9de195b92 data\stratos\loot_tables\blocks\air_mahoe_slab.json
 79848879da5d860afd94560ba6f9d318e9fe45ea data\stratos\loot_tables\blocks\sky_sediment_bricks.json
@@ -28,8 +28,8 @@ badd7723d8c1b51b488418780cb23879185cfab7 data\stratos\loot_tables\blocks\shingle
 b066611e6760d99390f11f2bc2fbf2691a6fd912 data\stratos\loot_tables\blocks\ruby_block.json
 c9031c203ab6df59f39dc48ca247d227d626f4a8 data\stratos\loot_tables\blocks\stripped_shingle_wood.json
 19c8c31e4fd331ef36298a14b452d9c4986c0c84 data\stratos\loot_tables\blocks\shingle_fence.json
-40342b31c6c86504a82e7db5b4a9e08e581d18c7 data\stratos\loot_tables\blocks\shingle_button.json
 7f95f67f237dc041c9199f3c70cd6bdfe0dc8ca9 data\stratos\loot_tables\blocks\lichen_grass.json
+40342b31c6c86504a82e7db5b4a9e08e581d18c7 data\stratos\loot_tables\blocks\shingle_button.json
 03d037afea266b643ca5a26c53f9e9095a07d88e data\stratos\loot_tables\blocks\shingle_planks.json
 15ff082295f12eac9df21eb45ba7e6ee5177df65 data\stratos\loot_tables\blocks\stripped_shingle_log.json
 f920a0a0509ec0f0644cceb5833d4f22f478f3a9 data\stratos\loot_tables\blocks\ruby_ore.json
