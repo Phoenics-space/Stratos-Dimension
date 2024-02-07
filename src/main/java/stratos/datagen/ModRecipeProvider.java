@@ -8,7 +8,6 @@ import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.ShapedRecipe;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
 import stratos.Items.ModItems;
@@ -81,20 +80,19 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(ExampleMod.MOD_ID, getItemPath(ModBlocks.SHINGLE_PLANKS) + "_from_stripped_shingle_wood"));
 
 
-
         createTrapdoorRecipe(ModBlocks.AIR_MAHOE_PLANKS, Ingredient.ofItems(ModBlocks.AIR_MAHOE_PLANKS));
 
-        createFenceRecipe(ModBlocks.AIR_MAHOE_PLANKS,Ingredient.ofItems(ModBlocks.AIR_MAHOE_PLANKS));
+        createFenceRecipe(ModBlocks.AIR_MAHOE_PLANKS, Ingredient.ofItems(ModBlocks.AIR_MAHOE_PLANKS));
 
-        createFenceGateRecipe(ModBlocks.AIR_MAHOE_PLANKS,Ingredient.ofItems(ModBlocks.AIR_MAHOE_PLANKS));
+        createFenceGateRecipe(ModBlocks.AIR_MAHOE_PLANKS, Ingredient.ofItems(ModBlocks.AIR_MAHOE_PLANKS));
 
         createDoorRecipe(ModBlocks.AIR_MAHOE_PLANKS, Ingredient.ofItems(ModBlocks.AIR_MAHOE_PLANKS));
         //shingle
         createTrapdoorRecipe(ModBlocks.SHINGLE_PLANKS, Ingredient.ofItems(ModBlocks.SHINGLE_PLANKS));
 
-        createFenceRecipe(ModBlocks.SHINGLE_PLANKS,Ingredient.ofItems(ModBlocks.SHINGLE_PLANKS));
+        createFenceRecipe(ModBlocks.SHINGLE_PLANKS, Ingredient.ofItems(ModBlocks.SHINGLE_PLANKS));
 
-        createFenceGateRecipe(ModBlocks.SHINGLE_PLANKS,Ingredient.ofItems(ModBlocks.SHINGLE_PLANKS));
+        createFenceGateRecipe(ModBlocks.SHINGLE_PLANKS, Ingredient.ofItems(ModBlocks.SHINGLE_PLANKS));
 
         createDoorRecipe(ModBlocks.SHINGLE_PLANKS, Ingredient.ofItems(ModBlocks.SHINGLE_PLANKS));
 
@@ -105,7 +103,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('#', ModBlocks.COBBLED_STRATOS_STONE)
                 .input('|', Items.STICK)
                 .criterion(hasItem(ModBlocks.COBBLED_STRATOS_STONE), conditionsFromItem(ModBlocks.COBBLED_STRATOS_STONE))
-                .offerTo(exporter, new Identifier(getItemPath(Items.STONE_PICKAXE)));
+                .offerTo(exporter, new Identifier(getItemPath(Items.STONE_PICKAXE) + "_from_cobbled_stratos_stone"));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, Items.STONE_AXE)
                 .pattern("## ")
@@ -114,7 +112,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('#', ModBlocks.COBBLED_STRATOS_STONE)
                 .input('|', Items.STICK)
                 .criterion(hasItem(ModBlocks.COBBLED_STRATOS_STONE), conditionsFromItem(ModBlocks.COBBLED_STRATOS_STONE))
-                .offerTo(exporter, new Identifier(getItemPath(Items.STONE_AXE)));
+                .offerTo(exporter, new Identifier(getItemPath(Items.STONE_AXE) + "_from_cobbled_stratos_stone"));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, Items.STONE_SWORD)
                 .pattern(" # ")
@@ -123,7 +121,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('#', ModBlocks.COBBLED_STRATOS_STONE)
                 .input('|', Items.STICK)
                 .criterion(hasItem(ModBlocks.COBBLED_STRATOS_STONE), conditionsFromItem(ModBlocks.COBBLED_STRATOS_STONE))
-                .offerTo(exporter, new Identifier(getItemPath(Items.STONE_SWORD)));
+                .offerTo(exporter, new Identifier(getItemPath(Items.STONE_SWORD) + "_from_cobbled_stratos_stone"));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, Items.STONE_SHOVEL)
                 .pattern(" # ")
@@ -132,7 +130,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('#', ModBlocks.COBBLED_STRATOS_STONE)
                 .input('|', Items.STICK)
                 .criterion(hasItem(ModBlocks.COBBLED_STRATOS_STONE), conditionsFromItem(ModBlocks.COBBLED_STRATOS_STONE))
-                .offerTo(exporter, new Identifier(getItemPath(Items.STONE_SHOVEL)));
+                .offerTo(exporter, new Identifier(getItemPath(Items.STONE_SHOVEL) + "_from_cobbled_stratos_stone"));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.ANCIENT_PORTAL_IGNITER)
                 .pattern("+#+")
@@ -146,4 +144,3 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     }
 }
-
