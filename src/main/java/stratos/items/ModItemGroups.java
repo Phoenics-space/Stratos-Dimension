@@ -19,6 +19,8 @@ public class ModItemGroups {
 
                         entries.add(stratos.Items.ModItems.ANCIENT_PORTAL_IGNITER);
 
+                        entries.add(stratos.Items.ModItems.WATER_CHARGE);
+
                         entries.add(ModBlocks.RUBY_BLOCK);
 
                         entries.add(ModBlocks.RUBY_ORE);

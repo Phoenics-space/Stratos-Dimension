@@ -50,6 +50,8 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerItemModel(ModItems.ANCIENT_PORTAL_IGNITER);
 
+        blockStateModelGenerator.registerItemModel(ModItems.WATER_CHARGE);
+
         blockStateModelGenerator.registerWallPlant(ModBlocks.SHROOM_MYOZYT);
 
 

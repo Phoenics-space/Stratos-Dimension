@@ -15,6 +15,7 @@ import stratos.Items.ModItems;
 import stratos.block.ModBlocks;
 import stratos.mod.ExampleMod;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class ModRecipeProvider extends FabricRecipeProvider {
@@ -143,6 +144,19 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('|', Items.STICK)
                 .criterion(hasItem(ModItems.RUBY), conditionsFromItem(ModItems.RUBY))
                 .offerTo(exporter, new Identifier(getItemPath(ModItems.ANCIENT_PORTAL_IGNITER)));
+
+
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.WATER_CHARGE, 1)
+                .input(Items.PRISMARINE_SHARD)
+                .input(ModItems.RUBY)
+                .input(Items.GHAST_TEAR)
+                .criterion(hasItem(Items.PRISMARINE_SHARD), conditionsFromItem(Items.PRISMARINE_SHARD))
+                .criterion(hasItem(ModItems.RUBY), conditionsFromItem(ModItems.RUBY))
+                .criterion(hasItem(Items.GHAST_TEAR), conditionsFromItem(Items.GHAST_TEAR))
+                .offerTo(exporter, new Identifier(ExampleMod.MOD_ID, getItemPath(ModItems.WATER_CHARGE) + "_from_prismarine_shard_and_ruby_and_ghast_tear"));
+
+
 
     }
 }

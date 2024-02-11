@@ -5,9 +5,12 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 import net.minecraft.util.Identifier;
 import stratos.block.ModBlocks;
+import stratos.entity.ModEntities;
 import stratos.particle.AirShroomParticle;
 import stratos.particle.ModParticles;
 
@@ -31,6 +34,8 @@ public class ExampleModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SHROOM_MYOZYT, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SHINGLE_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SHINGLE_TRAPDOOR, RenderLayer.getCutout());
+
+        EntityRendererRegistry.register(ModEntities.WATER_CHARGE, FlyingItemEntityRenderer::new);
 
         ParticleFactoryRegistry.getInstance().register(ModParticles.AIR_SHROOM_PARTICLE, AirShroomParticle.Factory::new);
 
